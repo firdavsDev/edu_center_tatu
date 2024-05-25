@@ -1,0 +1,76 @@
+{% load static %}
+{% load humanize %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>O'quv markaz</title>
+
+    <!-- mobile responsive meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- ** Plugins Needed for the Project ** -->
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="{% static 'plugins/bootstrap/bootstrap.min.css' %}">
+    <!-- slick slider -->
+    <link rel="stylesheet" href="{% static 'plugins/slick/slick.css' %}">
+    <!-- themefy-icon -->
+    <link rel="stylesheet" href="{% static 'plugins/themify-icons/themify-icons.css' %}">
+    <!-- animation css -->
+    <link rel="stylesheet" href="{% static 'plugins/animate/animate.css' %}">
+    <!-- aos -->
+    <link rel="stylesheet" href="{% static 'plugins/aos/aos.css' %}">
+    <!-- venobox popup -->
+    <link rel="stylesheet" href="{% static 'plugins/venobox/venobox.css' %}">
+
+    <!-- Main Stylesheet -->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+    <!--Favicon-->
+    <link rel="shortcut icon" href="{% static 'images/favicon.png' %}" type="image/x-icon">
+    <link rel="icon" href="{% static 'images/favicon.png' %}" type="image/x-icon">
+
+</head>
+
+<body>
+    <!-- preloader start -->
+    <div class="preloader">
+        <img src="{% static 'images/preloader.gif' %}" alt="preloader">
+    </div>
+    <!-- preloader end -->
+
+    <!-- header -->
+    {% block header %}
+    {% include 'base/header.html' %}
+    {% endblock header %}
+    <!-- header end -->
+
+    <!-- auth -->
+    {% block auth %}
+    {% include 'base/auth.html' %}
+    {% endblock auth %}
+
+    <!-- Content Wrapper. Contains page content -->
+    {% block content %}
+
+    {% endblock content %}
+    <!-- /.content-wrapper -->
+
+    <!-- footer -->
+    {% block footer %}
+    {% include 'base/footer.html' %}
+    {% endblock footer %}
+    <!-- footer end -->
+
+    <!-- ** js ** -->
+    {% block js %}
+    {% include 'base/js.html' %}
+    {% endblock js %}
+    <!-- ** js ** -->
+
+
+</body>
+
+</html>

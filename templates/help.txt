@@ -1,0 +1,11 @@
+Open new .html file in temaplates folder and use like this structure:
+
+{% extends 'base/base.html' %}
+{% load static %}
+{% load humanize %}
+
+{% block content %}
+
+Here you can put your section or body data
+
+{% endblock %}

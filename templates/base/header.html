@@ -1,0 +1,94 @@
+{% load static %}
+
+<!-- header -->
+<header class="fixed-top header">
+    <!-- top header -->
+    <div class="top-header py-2 bg-white">
+        <div class="container">
+            <div class="row no-gutters">
+                <div class="col-lg-12 text-center text-lg-center">
+                    {% if messages %}
+                    {% for message in messages %}
+                    <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+                        {{ message }}
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    {% endfor %}
+                    {% endif %}
+                </div>
+                <div class="col-lg-4 text-center text-lg-left">
+
+                    <a class="text-color mr-3" href="callto:+443003030266"><strong>CALL</strong> +998 99 770 73 75</a>
+                    <ul class="list-inline d-inline">
+                        <li class="list-inline-item mx-0"><a class="d-inline-block p-2 text-color" href="#"><i
+                                    class="ti-facebook"></i></a></li>
+                        <li class="list-inline-item mx-0"><a class="d-inline-block p-2 text-color" href="#"><i
+                                    class="ti-twitter-alt"></i></a></li>
+                        <li class="list-inline-item mx-0"><a class="d-inline-block p-2 text-color" href="#"><i
+                                    class="ti-linkedin"></i></a></li>
+                        <li class="list-inline-item mx-0"><a class="d-inline-block p-2 text-color" href="#"><i
+                                    class="ti-instagram"></i></a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-8 text-center text-lg-right">
+                    <ul class="list-inline">
+                        {% if user.is_authenticated %}
+                        <li class="list-inline-item"><a
+                                class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block"
+                                href="{% url 'logout' %}">logout</a>
+                        </li>
+                        <li class="list-inline-item"><a
+                                class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block"
+                                href="{% url 'course:my_courses' %}">My Courses</a>
+                        </li>
+                        {% else %}
+                        <li class="list-inline-item"><a
+                                class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block" href="#"
+                                data-toggle="modal" data-target="#loginModal">login</a></li>
+                        <li class="list-inline-item"><a
+                                class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block" href="#"
+                                data-toggle="modal" data-target="#signupModal">register</a></li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- navbar -->
+    <div class="navigation w-100">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-dark p-0">
+                <h1 class="navbar-brand it-pro" href="#"><strong class="it">IT</strong> PRO</h1>
+                <button class="navbar-toggler rounded-0" type="button" data-toggle="collapse" data-target="#navigation"
+                    aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navigation">
+                    <ul class="navbar-nav ml-auto text-center">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/">Home</a>
+                        </li>
+                        <li class="nav-item @@courses">
+                            <a class="nav-link" href="{% url 'course:course_list' %}">COURSES</a>
+                        </li>
+                        <li class="nav-item @@events">
+                            <a class="nav-link" href="{% url 'event_list' %}">EVENTS</a>
+                        </li>
+                        <li class="nav-item @@teacher">
+                            <a class="nav-link" href="{% url 'teacher_list' %}">
+                                Teacher
+                            </a>
+                        </li>
+                        <li class="nav-item @@contact">
+                            <a class="nav-link" href="{% url 'contact' %}">CONTACT</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+<!-- /header -->

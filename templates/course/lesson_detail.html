@@ -1,0 +1,69 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% load humanize %}
+
+{% block content %}
+<!-- page title -->
+<section class="page-title-section overlay" data-background="{% static 'images/backgrounds/page-title.jpg' %}">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <ul class="list-inline custom-breadcrumb">
+                    <li class="list-inline-item"><a class="h2 text-primary font-secondary" href="#">
+                            {{ course.name }}
+                        </a></li>
+                    <li class="list-inline-item text-white h3 font-secondary nasted">
+                        {{ lesson.title }}
+                    </li>
+                </ul>
+                <p class="text-lighten">My courses lesson</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- /page title -->
+
+<!-- section -->
+<section class="section-sm">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 mb-4">
+                <!-- course thumb -->
+                <iframe width="1200" height="600" src="https://www.youtube.com/embed/{{ lesson.youtube_url }}"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+        <!-- course info -->
+        <div class="row align-items-center mb-5">
+            <div class="col-xl-3 order-1 col-sm-6 mb-4 mb-xl-0">
+                <h2>{{lesson.title}}</h2>
+            </div>
+
+            <div class="col-xl-3 text-sm-right text-left order-sm-2 order-3 order-xl-3 col-sm-6 mb-4 mb-xl-0">
+                <a href="{% url 'course:finished_lesson' course.id lesson.id %}" class="btn btn-success">
+                    Finished
+                    <i class="ti ti-check"></i>
+                </a>
+            </div>
+            <!-- border -->
+            <div class="col-12 mt-4 order-4">
+                <div class="border-bottom border-primary"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 mb-4">
+                <h3>About lesson</h3>
+                <p>
+                    {{lesson.description}}
+                </p>
+            </div>
+        </div>
+
+    </div>
+</section>
+<!-- /section -->
+
+{% endblock %}
