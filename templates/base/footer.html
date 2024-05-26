@@ -31,8 +31,11 @@
                     <h4 class="text-white mb-5">Kompaniya</h4>
                     <ul class="list-unstyled">
                         <li class="mb-3"><a class="text-color" href="#about">Biz haqimizda</a></li>
-                        <li class="mb-3"><a class="text-color" href="#">Ommaviy oferta</a></li>
-                        <li class="mb-3"><a class="text-color" href="#">
+                        <li class="mb-3"><a class="text-color" href="{% static 'pdf/oferta.pdf' %}" target="_blank">
+                                Ommaviy oferta
+                            </a></li>
+                        <li class="mb-3"><a class="text-color" href="{% static 'pdf/privacy_policy.pdf' %}"
+                                target="_blank">
                                 Maxfiylik siyosati
                             </a></li>
                     </ul>
@@ -42,7 +45,9 @@
                     <h4 class="text-white mb-5">Ma'lumot</h4>
                     <ul class="list-unstyled">
                         <li class="mb-3"><a class="text-color" href="{% url 'contact' %}">Bog'lanish</a></li>
-                        <li class="mb-3"><a class="text-color" href="#">FAQ</a></li>
+                        <li class="mb-3"><a class="text-color" href="{% static 'pdf/guvohnoma.pdf' %}" target="_blank">`
+                                Guvohnoma
+                            </a></li>
                         <li class="mb-3"><a class="text-color" href="#">
                                 Fikrlar
                             </a></li>
