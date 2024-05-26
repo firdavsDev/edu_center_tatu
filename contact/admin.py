@@ -15,14 +15,14 @@ admin.site.unregister(Group)
 
 @admin.register(Contact)
 class ContactAdmin(admin.ModelAdmin):
-    list_display = ('name', 'email', 'message', 'is_asnwered', 'created')
+    list_display = ('name', 'phone', 'tg_username', 'is_asnwered', 'created')
     list_filter = ('is_asnwered', 'created')
-    search_fields = ('name', 'email', 'message')
+    search_fields = ('name', 'phone', 'tg_username')
     date_hierarchy = 'created'
     list_per_page = 10
     list_max_show_all = 100
     list_select_related = True
-    list_display_links = ('name', 'email')
+    list_display_links = ('name', 'phone')
     list_editable = ('is_asnwered',)
     actions = ('make_answered', 'make_unanswered')
 

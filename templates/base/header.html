@@ -20,7 +20,7 @@
                 </div>
                 <div class="col-lg-4 text-center text-lg-left">
 
-                    <a class="text-color mr-3" href="callto:+443003030266"><strong>CALL</strong> +998 99 770 73 75</a>
+                    <a class="text-color mr-3" href="callto:+443003030266"><strong>Tel</strong> +998 99 753 39 09</a>
                     <ul class="list-inline d-inline">
                         <li class="list-inline-item mx-0"><a class="d-inline-block p-2 text-color" href="#"><i
                                     class="ti-facebook"></i></a></li>
@@ -37,19 +37,19 @@
                         {% if user.is_authenticated %}
                         <li class="list-inline-item"><a
                                 class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block"
-                                href="{% url 'logout' %}">logout</a>
+                                href="{% url 'logout' %}">Chiqish</a>
                         </li>
                         <li class="list-inline-item"><a
                                 class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block"
-                                href="{% url 'course:my_courses' %}">My Courses</a>
+                                href="{% url 'course:my_courses' %}">Mening kurslarim</a>
                         </li>
                         {% else %}
                         <li class="list-inline-item"><a
                                 class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block" href="#"
-                                data-toggle="modal" data-target="#loginModal">login</a></li>
+                                data-toggle="modal" data-target="#loginModal">Kirish</a></li>
                         <li class="list-inline-item"><a
                                 class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block" href="#"
-                                data-toggle="modal" data-target="#signupModal">register</a></li>
+                                data-toggle="modal" data-target="#signupModal">Registratsiya</a></li>
                         {% endif %}
                     </ul>
                 </div>
@@ -60,7 +60,7 @@
     <div class="navigation w-100">
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-dark p-0">
-                <h1 class="navbar-brand it-pro" href="#"><strong class="it">IT</strong> PRO</h1>
+                <h1 class="navbar-brand it-pro" href="#"><strong class="it">PYTHON</strong> ACADEMY</h1>
                 <button class="navbar-toggler rounded-0" type="button" data-toggle="collapse" data-target="#navigation"
                     aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -69,21 +69,22 @@
                 <div class="collapse navbar-collapse" id="navigation">
                     <ul class="navbar-nav ml-auto text-center">
                         <li class="nav-item">
-                            <a class="nav-link" href="/">Home</a>
+                            <a class="nav-link" href="/">Asosiy</a>
                         </li>
                         <li class="nav-item @@courses">
-                            <a class="nav-link" href="{% url 'course:course_list' %}">COURSES</a>
+                            <a class="nav-link" href="{% url 'course:course_list' %}">Kurslar</a>
                         </li>
                         <li class="nav-item @@events">
-                            <a class="nav-link" href="{% url 'event_list' %}">EVENTS</a>
+                            <a class="nav-link" href="{% url 'event_list' %}">Yangiliklar</a>
                         </li>
                         <li class="nav-item @@teacher">
                             <a class="nav-link" href="{% url 'teacher_list' %}">
-                                Teacher
+                                O'qituvchilar
                             </a>
                         </li>
                         <li class="nav-item @@contact">
-                            <a class="nav-link" href="{% url 'contact' %}">CONTACT</a>
+                            <a class="nav-link" href="{% url 'contact' %}">Bog'lanish
+                            </a>
                         </li>
                     </ul>
                 </div>

@@ -9,16 +9,16 @@ def contact(request):
     try:
         if request.method == 'POST':
             name = request.POST.get('name')
-            email = request.POST.get('email')
-            subject = request.POST.get('subject')
-            message = request.POST.get('message')
+            phone = request.POST.get('phone')
+            tg_username = request.POST.get('tg_username')
             Contact.objects.create(
-                subject=subject,
-                name=name, email=email, message=message
+                phone=phone,
+                name=name,
+                tg_username=tg_username
             )
             messages.success(request, 'Xabaringiz muvaffaqiyatli yuborildi!')
             return redirect('contact')
         return render(request, 'contact.html', {'success': False})
     except Exception as e:
-        messages.error(request, 'Failed to send message')
+        messages.error(request, 'Xatolik yuz berdi: ' + str(e))
         return render(request, 'contact.html', {'success': False})

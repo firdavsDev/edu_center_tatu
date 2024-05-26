@@ -25,7 +25,7 @@ def course_enroll(request, course_id):
     course = Coures.objects.get(id=course_id)
     user = User.objects.get(id=request.user.id)
     UserCourse.objects.get_or_create(user=user, course=course)
-    messages.success(request, 'You have successfully enrolled in this course')
+    messages.success(request, 'Muaffaqiyatli kursga yozildingiz!')
     return redirect('course:my_courses')
 
 
@@ -64,5 +64,5 @@ def finsihed_lesson(request, course_id, lesson_id):
         enrolled_course=user_course)
     user_finished_lesson.lessons.add(lesson)
     user_finished_lesson.save()
-    messages.success(request, 'You have successfully finished this lesson')
+    messages.success(request, 'Dars muvaffaqiyatli tugallandi!')
     return redirect('course:my_course_detail', course_id=course_id)

@@ -9,14 +9,12 @@
         <div class="row">
             <div class="col-md-8">
                 <ul class="list-inline custom-breadcrumb">
-                    <li class="list-inline-item"><a class="h2 text-primary font-secondary" href="#">Our
-                            Courses</a></li>
+                    <li class="list-inline-item"><a class="h2 text-primary font-secondary" href="#">Kurslarimiz</a></li>
                     <li class="list-inline-item text-white h3 font-secondary nasted">
                         {{ course.name }}
                     </li>
                 </ul>
-                <p class="text-lighten">Our courses offer a good compromise between the continuous assessment favoured
-                    by some universities and the emphasis placed on final exams by others.</p>
+                <!-- <p class="text-lighten">Kurslarimiz</p> -->
             </div>
         </div>
     </div>
@@ -43,8 +41,8 @@
                         <div class="d-flex align-items-center">
                             <i class="ti-book text-primary icon-md mr-2"></i>
                             <div class="text-left">
-                                <h6 class="mb-0">Duration</h6>
-                                <p class="mb-0">{{course.duration}} days</p>
+                                <h6 class="mb-0">Muddati</h6>
+                                <p class="mb-0">{{course.duration}} kun</p>
                             </div>
                         </div>
                     </li>
@@ -53,15 +51,17 @@
                         <div class="d-flex align-items-center">
                             <i class="ti-wallet text-primary icon-md mr-2"></i>
                             <div class="text-left">
-                                <h6 class="mb-0">Price</h6>
-                                <p class="mb-0">${{course.price}}</p>
+                                <h6 class="mb-0">Narx</h6>
+                                <p class="mb-0">{{course.price}} so'm</p>
                             </div>
                         </div>
                     </li>
                 </ul>
             </div>
             <div class="col-xl-3 text-sm-right text-left order-sm-2 order-3 order-xl-3 col-sm-6 mb-4 mb-xl-0">
-                <a href="{% url 'course:enroll' course.id %}" class="btn btn-primary">Apply now</a>
+                <a href="{% url 'course:enroll' course.id %}" class="btn btn-primary">
+                    Kursga yozilish
+                </a>
             </div>
             <!-- border -->
             <div class="col-12 mt-4 order-4">
@@ -71,13 +71,13 @@
         <!-- course details -->
         <div class="row">
             <div class="col-12 mb-4">
-                <h3>About Course</h3>
+                <h3>Kurs haqida</h3>
                 <p>
                     {{course.description}}
                 </p>
             </div>
             <div class="col-12 mb-4">
-                <h3 class="mb-3">Lessons</h3>
+                <h3 class="mb-3">Darslar ro'yxati</h3>
                 <ul class="list-styled">
                     {% for lesson in lessons %}
                     <li>
@@ -86,14 +86,20 @@
                     </li>
                     {% empty %}
                     <li>
-                        <h6>No lessons available</h6>
+                        <h6>
+                            <a href="#">
+                                Darslar mavjud emas.
+                            </a>
+                        </h6>
                     </li>
                     {% endfor %}
                 </ul>
             </div>
             <!-- teacher -->
             <div class="col-12">
-                <h5 class="mb-3">Teacher</h5>
+                <h5 class="mb-3">
+                    Muallif
+                </h5>
                 <div class="d-flex justify-content-between align-items-center flex-wrap">
                     <div class="media mb-2 mb-sm-0">
                         <img class="mr-4 img-fluid" src="{{ course.teacher.profile_pic.url }}" alt="teacher"
@@ -103,14 +109,16 @@
                                 {% if course.teacher %}
                                 {{course.teacher.name}}
                                 {% else %}
-                                No teacher assigned
+                                Muallif mavjud emas.
                                 {% endif %}
                             </h4>
                             {{course.teacher.job_title}}
                         </div>
                     </div>
                     <div class="social-link">
-                        <h6 class="d-none d-sm-block">Social Link</h6>
+                        <h6 class="d-none d-sm-block">
+                            Ijtimoiy tarmoqlar
+                        </h6>
                         <ul class="list-inline">
                             <li class="list-inline-item"><a class="text-color" href=mailto:"{{ course.teacher.email }}">
                                     <i class="ti-email"></i>

@@ -12,10 +12,10 @@ def login_view(request):
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
-            messages.success(request, 'Logged in successfully')
+            messages.success(request, 'Muaffaqiyatli kirdingiz!')
             return redirect('home')
         else:
-            messages.error(request, 'Username or password is incorrect')
+            messages.error(request, 'Login yoki parol xato!')
     return render(request, 'index.html')
 
 
@@ -25,17 +25,18 @@ def register_view(request):
         email = request.POST.get('email')
         password = request.POST.get('password')
         if User.objects.filter(username=username).exists():
-            messages.error(request, 'Username is taken')
+            messages.error(request, 'Bu foydalanuvchi nomi band')
         else:
             if User.objects.filter(email=email).exists():
-                messages.error(request, 'Email is taken')
+                messages.error(request, 'Bu email band')
             else:
                 user = User.objects.create_user(
                     username=username, email=email, password=password)
                 user.save()
                 # here login the user
                 login(request, user)
-                messages.success(request, 'Account created successfully')
+                messages.success(
+                    request, 'Muvaffaqiyatli ro`yxatdan o`tdingiz!')
                 return redirect('home')
     return render(request, 'index.html')
 

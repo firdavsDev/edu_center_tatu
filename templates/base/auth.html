@@ -21,12 +21,12 @@
 
                         <div class="col-12">
                             <input type="text" class="form-control mb-3" id="signupName" name="username"
-                                placeholder="Name">
+                                placeholder="Username">
                         </div>
 
                         <div class="col-12">
                             <input type="password" class="form-control mb-3" id="signupPassword" name="password"
-                                placeholder="Password">
+                                placeholder="Parol">
                         </div>
 
                         <div class="col-12">
@@ -53,14 +53,15 @@
                 <form action="{% url 'login' %}" method="post" class="row">
                     {% csrf_token %}
                     <div class="col-12">
-                        <input type="text" class="form-control mb-3" id="loginName" name="username" placeholder="Name">
+                        <input type="text" class="form-control mb-3" id="loginName" name="username"
+                            placeholder="Username">
                     </div>
                     <div class="col-12">
                         <input type="password" class="form-control mb-3" id="loginPassword" name="password"
-                            placeholder="Password">
+                            placeholder="Parol">
                     </div>
                     <div class="col-12">
-                        <button type="submit" class="btn btn-primary">LOGIN</button>
+                        <button type="submit" class="btn btn-primary">Kirish</button>
                     </div>
                 </form>
             </div>

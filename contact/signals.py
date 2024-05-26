@@ -10,4 +10,4 @@ from .models import Contact
 def create_contact(sender, instance, created, **kwargs):
     if created:
         tg_alert.custom_alert(
-            text=f'Yangi xabarchi ismi: {instance.name}\n\nXabar: {instance.message}')
+            text=f'Yangi xabarchi ismi: {instance.name}\n\nTelefon: {instance.phone}')
