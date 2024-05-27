@@ -39,7 +39,7 @@ class UserFinishedCourseLesson(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f'{self.user.username} - {self.lesson.title}'
+        return f'{self.enrolled_course.user.username} - {self.enrolled_course.course.name}'
 
     class Meta:
         verbose_name = 'User Finished Lesson'
