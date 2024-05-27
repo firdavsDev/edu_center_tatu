@@ -4,9 +4,9 @@ from django.contrib.auth.models import Group
 # Register your models here.
 from .models import Contact
 
-admin.site.site_header = "Edelivery Admin"
-admin.site.site_title = "Edelivery Admin Portal"
-admin.site.index_title = "Welcome to Edelivery Portal"
+admin.site.site_header = "Python Academy Admin Portal"
+admin.site.site_title = "Python Academy Admin Portal"
+admin.site.index_title = "Welcome to Python Academy Admin Portal"
 admin.site.empty_value_display = "Ma'lumot yo'q"
 admin.site.unregister(Group)
 
