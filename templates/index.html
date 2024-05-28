@@ -133,7 +133,7 @@
                             {{ course.description|truncatewords:10 }}
                         </p>
                         {% if user.is_authenticated %}
-                        <a href="#" class="btn btn-primary btn-sm">
+                        <a href="{% url 'course:course_list' %}" class="btn btn-primary btn-sm">
                             Kursga o'tish
                         </a>
                         {% else %}
